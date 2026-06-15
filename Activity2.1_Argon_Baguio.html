@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z Space Infinity | Home</title>
+    <link rel="stylesheet" href="Home.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="text-row">
+            <a href="explore.html" class="left-text">Explore</a>
+            <a href="Activity2.1_Argon_Baguio.html" class="center-text">Home</a>
+            <a href="aboutme.html" class="right-text">About Me</a> 
+            <a href="ArtG.html" class="right-text">Gallery</a>
+            <a href="javascript:void(0)" class="right-text logout-btn" onclick="terminateSession()">Logout</a>
+        </div>
+    </nav>
+
+    <div class="grid-container">
+        <main>
+            <div class="infinity-section">
+                <img src="images/autism.png" alt="Infinity logo" class="infinity-logo">
+                <h2 class="section-title">INFINITY AND BEYOND</h2>
+
+                <div class="horizontal-icons">
+                    <a href="PAGE 12.html" class="icon-wrapper">
+                        <img src="images/earth2.png" alt="Earth">
+                        <h4>EARTH</h4>
+                    </a>
+                    <a href="PAGE 2.html" class="icon-wrapper">
+                        <img src="images/sun1.png" alt="Sun">
+                        <h4>SUN</h4>
+                    </a>
+                    <a href="ArtG.html" class="icon-wrapper">
+                        <img src="images/art.png" alt="Art Gallery">
+                        <h4>ART GALLERY</h4>
+                    </a>
+                    <a href="PAGE 3.html" class="icon-wrapper">
+                        <img src="images/galaxy.png" alt="Universe"> 
+                        <h4>UNIVERSE</h4>
+                    </a>
+                </div>
+            </div>
+
+            <section class="missions-feed">
+                <h2 class="feed-header">LATEST MISSION UPDATES & DISCOVERIES</h2>
+
+                <article class="mission-update">
+                    <h3>ARTEMIS II: PREPARING FOR LUNAR ASCENT</h3>
+                    <p>NASA is currently in the final stages of the "Wet Dress Rehearsal" for the Artemis II mission. This mission marks the first time in over 50 years that humans will journey to the Moon's vicinity. The crew is set to perform a lunar flyby, testing the Orion spacecraft's life-support systems in deep space.</p>
+                    <div class="nasa-img-box">
+                        <img src="images/splash.jpg" alt="Artemis II Crew" style="width:100%; border-radius:12px;">
+                        <p class="caption"><i>The four-person crew: Wiseman, Glover, Koch, and Hansen.</i></p>
+                    </div>
+                </article>
+
+                <article class="mission-update">
+                    <h3>JWST DETECTS WATER VAPOR ON EXOPLANET LHS 475 b</h3>
+                    <p>The James Webb Space Telescope has provided atmospheric data for LHS 475 b, an Earth-sized rocky planet. While the planet is significantly hotter than Earth, the detection of atmospheric components marks a major milestone in our ability to characterize worlds that could potentially host life.</p>
+                </article>
+
+                <article class="mission-update">
+                    <h3>EUROPA CLIPPER: THE SEARCH FOR AN OCEAN WORLD</h3>
+                    <p>Now hurtling through the outer solar system, the Europa Clipper mission is designed to investigate Jupiter's moon, Europa. Scientists believe a vast saltwater ocean exists beneath its icy crust, containing more water than all of Earth's oceans combined.</p>
+                </article>
+
+                <article class="mission-update">
+                    <h3>PERSEVERANCE CAPTURES NEW SAMPLES IN NERETVA VALLIS</h3>
+                    <p>The Perseverance rover has successfully collected its 24th core sample from an ancient riverbed. These samples are crucial for the future Mars Sample Return mission, as they contain minerals that only form in the presence of liquid water.</p>
+                </article>
+
+                <article class="mission-update">
+                    <h3>FAST RADIO BURSTS FROM DEEP SPACE</h3>
+                    <p>Astronomers have traced a series of repeating Fast Radio Bursts (FRBs) to a magnetar in a distant galaxy. These intense pulses of radio waves last only milliseconds but release as much energy as the Sun does in a year, challenging our understanding of high-energy physics.</p>
+                </article>
+
+            </section>
+
+            <h3 class="tagline">☀️🌍🪐☄️ Discover the wonders of our planet and beyond ☀️🌍🪐☄️</h3>
+        </main>
+
+        <aside>
+            <h1 class="sidebar-title">QUICK ACCESS</h1>
+            
+            <div class="sidebar-item" style="border-left: 4px solid #00f2ff;">
+                <h4>THE CREATOR</h4>
+                <p>Want to know more about the person behind The Infinity Project?</p>
+                <a href="aboutme.html" class="btn-small">View My Life</a>
+            </div>
+
+            <div class="sidebar-item">
+                <h4>NASA LIVE FEED</h4>
+                <p>Stay updated with the latest live streams from the ISS and Mission Control.</p>
+                <a href="https://www.nasa.gov/nasalive" target="_blank">Watch Live</a>
+            </div>
+
+            <div class="sidebar-item">
+                <h4>VOYAGER INTERSTELLAR</h4>
+                <p>Voyager 1 continues to send back data from beyond our solar system, 15 billion miles away.</p>
+                <a href="explore.html">View Tracker</a>
+            </div>
+
+            <div class="sidebar-item">
+                <h4>USER SESSION</h4>
+                <p>Connection: <strong>SECURE</strong></p>
+                <button class="btn-small danger" onclick="terminateSession()">Logout</button>
+            </div>
+        </aside>
+        
+        <audio id="bg-music" src="audio/Harry Styles - Sign of the Times.mp3" preload="auto"></audio>
+
+        <div id="music-trigger" style="position: fixed; bottom: 20px; right: 20px; background: rgba(0, 242, 255, 0.2); border: 1px solid #00f2ff; padding: 10px 15px; border-radius: 50px; color: white; font-family: 'Orbitron', sans-serif; cursor: pointer; z-index: 1000; display: flex; align-items: center; gap: 10px; backdrop-filter: blur(5px);">
+            <span>🎵</span>
+            <span style="font-size: 12px; letter-spacing: 1px;">SURROUND SOUND</span>
+        </div>
+    </div>
+	
+	<div class="sidebar-item">
+    <h4>USER SESSION</h4>
+    <p>Welcome, <span id="user-display" style="color: #00f2ff; font-weight: bold;"></span></p> 
+    <p>Connection: <strong>SECURE</strong></p>
+    <button class="btn-small danger" onclick="terminateSession()">Logout</button>
+	</div>
+
+	<div class="user-profile-header">
+    <span id="top-username"></span>
+    <img src="images/ast.png" alt="User Logo" class="user-avatar">
+	</div>
+
+    <footer>
+        <p>&copy; 2026 The Infinity Project. Information provided via NASA Open API.</p>
+    </footer>
+
+<script>
+    if (localStorage.getItem('session_active') !== 'true') {
+        window.location.href = "Log.html";
+    }
+
+    const savedName = localStorage.getItem('current_user');
+    document.getElementById('top-username').innerText = savedName;
+    if(document.getElementById('user-display')) {
+        document.getElementById('user-display').innerText = savedName;
+    }
+
+    function terminateSession() {
+        localStorage.removeItem('session_active');
+        localStorage.removeItem('current_user');
+        localStorage.removeItem('music_time');
+        localStorage.removeItem('music_playing');
+        window.location.href = "Log.html"; 
+    }
+
+    const music = document.getElementById('bg-music');
+    const trigger = document.getElementById('music-trigger');
+    const startTime = 175;
+    const endTime = 349;
+    let hasJumped = false;
+
+    music.addEventListener('timeupdate', () => {
+        if (!hasJumped && music.currentTime < startTime) {
+            music.currentTime = startTime;
+            hasJumped = true;
+        }
+        if (music.currentTime >= endTime) {
+            music.pause();
+            music.currentTime = startTime; 
+            localStorage.setItem('music_playing', 'false');
+        }
+    });
+
+    trigger.addEventListener('mouseenter', () => {
+        music.play().catch(() => {});
+    });
+
+    window.addEventListener('beforeunload', () => {
+        localStorage.setItem('music_time', music.currentTime);
+        localStorage.setItem('music_playing', !music.paused);
+    });
+
+    window.addEventListener('load', () => {
+        const savedTime = localStorage.getItem('music_time');
+        const wasPlaying = localStorage.getItem('music_playing');
+        music.currentTime = savedTime ? parseFloat(savedTime) : startTime;
+        if (wasPlaying === 'true') {
+            music.play().catch(() => {});
+        }
+    });
+</script>
+</body>
+</html>

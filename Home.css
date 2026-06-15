@@ -1,0 +1,214 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    /* Deep red to a lighter pinkish-red gradient */
+    background: linear-gradient(135deg, #450a0a 0%, #7f1d1d 50%, #9f1239 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #ff4d4d, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255, 182, 193, 0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, #ff0000, transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255, 105, 180, 0.6), transparent),
+        radial-gradient(2px 2px at 160px 30px, #fb7185, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: sparkle 20s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+@keyframes sparkle {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100px); }
+}
+}
+
+
+nav {
+    background-color: #153944; 
+    color: white;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.text-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-row a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.text-row a:hover {
+    color: #fbbf24;
+}
+
+.center-text { flex: 1; text-align: center; }
+.left-text { text-align: left; }
+.right-text { text-align: right; margin-left: 20px; }
+
+.logout-btn {
+    color: #ff4b4b !important;
+    font-weight: bold;
+    border: 1px solid #ff4b4b;
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
+.logout-btn:hover {
+    background-color: #ff4b4b;
+    color: white !important;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: "main aside"; 
+    grid-template-columns: 75% 25%; 
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+main { grid-area: main; padding: 40px; }
+aside { grid-area: aside; padding: 40px; text-align: left; }
+
+/* Infinity Section & Icons */
+.infinity-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.infinity-logo {
+    width: 150px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.infinity-logo:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #fbbf24;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.horizontal-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ADD8E6;
+    transition: transform 0.3s ease;
+}
+
+.icon-wrapper:hover { transform: scale(1.1); }
+.icon-wrapper img { width: 120px; height: auto; margin-bottom: 10px; }
+
+/* Mission Feed */
+.mission-update {
+    background: rgba(30, 41, 59, 0.7);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: left;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.mission-update h3 { color: #fbbf24; margin-bottom: 1rem; }
+.nasa-img-box { margin-top: 15px; }
+
+/* Sidebar Items */
+.sidebar-item {
+    background: rgba(15, 23, 42, 0.8);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.sidebar-item h4 { color: #00f2ff; margin-bottom: 10px; }
+.sidebar-item a { color: #fbbf24; text-decoration: none; font-weight: bold; }
+
+/* Footer */
+footer {
+    grid-area: footer;
+    padding: 30px;
+    color: #64748b;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (max-width: 992px) {
+    .grid-container {
+        grid-template-areas: "main" "aside";
+        grid-template-columns: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .horizontal-icons { gap: 20px; }
+    .icon-wrapper img { width: 80px; }
+}
+
+.user-header-profile {
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #00f2ff;
+    font-family: 'Orbitron', sans-serif;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 5px 15px;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 242, 255, 0.2);
+}
+.user-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #00f2ff;
+    object-fit: cover;

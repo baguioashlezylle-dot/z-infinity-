@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Baguio Activity 3.3 Sample My BioData</title>
+
+<style>
+body{
+font-family: serif;
+background:#f2f2f2;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh
+}
+.box{
+background:#FF7276;
+width:320px;
+padding:20px;
+border:2px solid gray;
+text-align:left
+}
+h2{
+text-align:center;
+margin-bottom:15px
+}
+#output{
+line-height:1.8
+}
+button{
+margin-top:15px;
+width:100%;
+padding:8px;
+background:red;
+color:purple;
+border:none;
+font-size:16px;
+cursor:pointer
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+<h2>My BioData</h2>
+
+<div id="output">
+Full Name:<br>
+Age:<br>
+Date of Birth:<br>
+Nationality:<br>
+Religion:<br>
+Address:
+</div>
+
+<button onclick="myData()">My Data</button>
+</div>
+
+<script>
+function myData(){
+let name=prompt("Enter Full Name:")
+let age=prompt("Enter Age:")
+let dob=prompt("Enter Date of Birth:")
+let nat=prompt("Enter Nationality:")
+let rel=prompt("Enter Religion:")
+let add=prompt("Enter Address:")
+
+document.getElementById("output").innerHTML=
+"Full Name: "+name+"<br>"+
+"Age: "+age+"<br>"+
+"Date of Birth: "+dob+"<br>"+
+"Nationality: "+nat+"<br>"+
+"Religion: "+rel+"<br>"+
+"Address: "+add
+}
+</script>
+
+</body>
+</html>

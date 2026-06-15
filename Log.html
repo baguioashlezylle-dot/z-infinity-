@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Control | Authentication</title>
+    <style>
+       body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Swapped from navy/black to a deep maroon and dark wine red */
+    background: radial-gradient(circle at center, #9f1239 0%, #450a0a 100%);
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            padding: 40px;
+            border-radius: 20px;
+            width: 380px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 242, 255, 0.1);
+        }
+
+        h2 { letter-spacing: 4px; color: #00f2ff; margin-bottom: 20px; text-transform: uppercase; }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            border-radius: 5px;
+            color: white;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            background: #00f2ff;
+            border: none;
+            border-radius: 5px;
+            color: #090a0f;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .toggle-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #00f2ff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        #signup-box { display: none; }
+    </style>
+</head>
+<div class="login-card">
+    <div id="login-box">
+        <h2>Station Login</h2>
+        <input type="text" id="login-user" placeholder="ASTRONAUT ID">
+        <input type="password" id="login-pass" placeholder="ACCESS CODE">
+        <button class="btn" onclick="directRedirect()">Initialize Launch</button>
+        <p class="toggle-link" onclick="toggleAuth('signup')">New Recruit? Register Here</p>
+    </div>
+
+    <div id="signup-box">
+        <h2>Recruit Enrollment</h2>
+        <input type="text" id="signup-user" placeholder="CHOOSE ASTRONAUT ID">
+        <input type="email" id="signup-email" placeholder="SPACE MAIL (EMAIL)">
+        <input type="password" id="signup-pass" placeholder="CREATE ACCESS CODE">
+        <button class="btn" onclick="completeEnrollment()">Complete Enrollment</button>
+        <p class="toggle-link" onclick="toggleAuth('login')">Already Enlisted? Login</p>
+    </div>
+</div>
+
+<script>
+    function toggleAuth(mode) {
+        document.getElementById('login-box').style.display = mode === 'signup' ? "none" : "block";
+        document.getElementById('signup-box').style.display = mode === 'signup' ? "block" : "none";
+    }
+
+    function completeEnrollment() {
+        const user = document.getElementById('signup-user').value.trim();
+        const pass = document.getElementById('signup-pass').value.trim();
+
+        if (user !== "" && pass !== "") {
+            let users = JSON.parse(localStorage.getItem('space_users')) || [];
+            
+            const userExists = users.find(u => u.username === user);
+            if (userExists) {
+                alert("This Astronaut ID is already taken.");
+                return;
+            }
+
+            users.push({ username: user, password: pass });
+            localStorage.setItem('space_users', JSON.stringify(users));
+            
+            alert("Enrollment Complete! Account saved to Station Registry.");
+            toggleAuth('login');
+        } else {
+            alert("Please provide an ID and Access Code.");
+        }
+    }
+
+    function directRedirect() {
+        const userIn = document.getElementById('login-user').value.trim();
+        const passIn = document.getElementById('login-pass').value.trim();
+        
+        const users = JSON.parse(localStorage.getItem('space_users')) || [];
+        const account = users.find(u => u.username === userIn && u.password === passIn);
+
+        if (account) {
+            localStorage.setItem('session_active', 'true');
+            localStorage.setItem('current_user', userIn);
+            window.location.href = "Activity2.1_Argon_Baguio.html";
+        } else {
+            alert("Access Denied: Invalid Credentials.");
+        }
+    }
+</script>

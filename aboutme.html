@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aboutme</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://i.pinimg.com/1200x/d3/49/12/d349122a34550fd4dbd83fcb45d70024.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: 50px;
+            border-radius: 35px;
+            border: 2px solid rgba(255, 255, 255, 0.2); 
+            width: 90%;
+            max-width: 1100px; /* Increased width to fit larger pictures better */
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 4px;
+            text-transform: lowercase;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: #1DB954;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-align: left;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 60px; /* Wider gap for a cleaner look */
+            align-items: flex-start;
+        }
+
+        .bio-column {
+            flex: 1;
+            text-align: left;
+        }
+
+        .bio-item {
+            height: 250px; /* Match the new photo height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .bio-item p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .photo-column {
+            flex: 1.4; /* Gives more room to the pictures */
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .photo-container {
+            width: 100%;
+            height: 250px; /* Increased height for bigger images */
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.4s ease;
+        }
+
+        /* Interval Effect */
+        .photo-container:nth-child(even) {
+            transform: translateX(30px);
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This ensures your pics fit perfectly regardless of original size */
+        }
+
+        .photo-container:hover {
+            transform: scale(1.05) !important;
+            border-color: #1DB954;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Spotify Player */
+        .spotify-mini-player {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #121212;
+            width: 300px;
+            padding: 12px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #282828;
+            z-index: 9999;
+        }
+
+        .mini-album-art {
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+            background: url('https://i.scdn.co/image/ab67616d0000b2737699920153833b708316135d');
+            background-size: cover;
+        }
+
+        .track-name { font-weight: bold; font-size: 0.85rem; display: block; color: white; }
+        .artist-name { color: #b3b3b3; font-size: 0.75rem; display: block; }
+
+        audio {
+            width: 100%;
+            height: 25px;
+            margin-top: 5px;
+            filter: invert(100%) hue-rotate(180deg) brightness(1.5);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 35px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>aboutme</h1>
+        <div class="subtitle">Ashle Zylle S. Baguio | Argon</div>
+
+        <div class="main-content">
+            <div class="bio-column">
+                <div class="bio-item">
+                    <p><strong>Introduction:</strong> I’m Ashle Zylle, a student navigating web development and life, one line of code at a time. I find comfort in lyrics that tell a story.</p>
+                </div>
+                <div class="bio-item">
+                    <p><strong>Sports:</strong> When I'm not studying, you can find me on the court. Badminton is my go-to for staying active, focused, and competitive.</p>
+                </div>
+                <div class="bio-item">
+                    <p><strong>The Vibe:</strong> I love the "Mundo- IV of Spades" aesthetic—late-night thoughts, blurry city lights, and a deep Spotify playlist that never ends.</p>
+                </div>
+				
+				<div class="bio-item">
+                    <p><strong>The Friendship:</strong> Friendships are one thing that kept me, to being more curious
+					about this mystery of life</p>
+                </div>
+				
+            </div>
+
+            <div class="photo-column">
+                <div class="photo-container">
+                    <img src="images/me.png" alt="Intro">
+                </div>
+                <div class="photo-container">
+                    <img src="images/bad.png" alt="Badminton">
+                </div>
+                <div class="photo-container">
+                    <img src="images/mund.png" alt="Vibe">
+                </div>
+				
+				<div class="photo-container">
+                    <img src="images/prends.png" alt="Bro">
+                </div>
+            </div>
+        </div>
+
+        <a href="Activity2.1_Argon_Baguio.html" class="back-button">Go Back</a>
+    </div>
+
+    <div class="spotify-mini-player">
+        <div class="mini-album-art"></div>
+        <div class="player-text" style="flex:1;">
+            <span class="track-name">Mundo</span>
+            <span class="artist-name">IV of Spades</span>
+				<audio controls>
+    <source src="audio/IV Of Spades - Mundo.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const audio = document.querySelector('audio');
+  const startTime = 205; // change this to your desired seconds
+  
+  audio.addEventListener('loadedmetadata', function() {
+    audio.currentTime = startTime;
+  });
+</script>
+        </div>
+    </div>
+
+
+</body>
+</html>
